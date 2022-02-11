@@ -10,7 +10,7 @@ jobs:
     # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
     docker:
       - image: "ubuntu:22.04"
-      - image: "minio/minio"
+      - image: "minio/minio:RELEASE.2022-02-05T04-40-59Z"
         entrypoint: ""
         command: ["sh", "-c", "microdnf update --nodocs && microdnf install openssl && mkdir -p /root/.minio/certs && openssl req -x509 -nodes -days 365 -newkey rsa:2048 -subj \"/C=JP/O=tsbkw/CN=localhost/\" -keyout /root/.minio/certs/private.key -out /root/.minio/certs/public.crt && /usr/bin/docker-entrypoint.sh server --address \":9002\" /data"]
     # Add steps to the job
