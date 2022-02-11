@@ -24,7 +24,7 @@ jobs:
       - run:
           name: "Accessibility check"
           command: |
-            curl http://127.0.0.1:9002 -v
+            curl https://127.0.0.1:9002 -v
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
